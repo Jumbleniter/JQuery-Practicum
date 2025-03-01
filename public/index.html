@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Logs</title>
+    <link
+      rel="icon"
+      href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Axios CDN -->
+  </head>
+  <body>
+    <form>
+      <select
+        aria-label="Select Course"
+        id="course"
+        name="course"
+        data-cy="course_select"
+      >
+        <option selected value="">Choose Course</option>
+        <!-- These options will be replaced dynamically via AJAX -->
+      </select>
+      <br />
+
+      <label for="uvuId">UVU ID</label><br />
+      <input
+        type="text"
+        id="uvuId"
+        name="uvuId"
+        data-cy="uvuId_input"
+        maxlength="8"
+        pattern="\d{8}"
+        placeholder="10234567"
+        disabled
+      />
+      <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay">
+        Studnet Logs for 10234567
+      </h3>
+      <ul data-cy="logs">
+        <!-- dynamically loaded via AJAX -->
+      </ul>
+
+      <label>New Log</label><br />
+      <textarea
+        style="height: 75px"
+        aria-label="add log textarea"
+        data-cy="log_textarea"
+        disabled
+      ></textarea>
+      <br />
+      <button type="submit" data-cy="add_log_btn" disabled>Add Log</button>
+    </form>
+    <label class="theme-toggle">
+      <input type="checkbox" id="themeSwitch" />
+      Dark Mode
+    </label>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- DONE: 
+  - Set lang attribute to American English ("en").
+  - Set charset to UTF-8.
+  - Used Stack Overflow's favicon.
+  - Loaded an external CSS file.
+  - Course options will be fetched dynamically via AJAX.
+  - UVU ID input is disabled until a course is selected.
+  - UVU ID field has max length of 8 characters, only allows digits.
+  - When 8 valid digits are entered, an AJAX request will fetch logs.
+  - If a valid response (200/304) is received, logs are displayed.
+  - Clicking on a log toggles visibility of the text (excluding date).
+  - "New Log" textarea and submit button are disabled until logs are displayed.
+  - "Add Log" button will send a PUT request via AJAX to store logs.
+  - Loaded an external JS file.
+-->
