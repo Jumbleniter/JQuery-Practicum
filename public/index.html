@@ -1,65 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Student Logs</title>
-    <link
-      rel="icon"
-      href="https://cdn.sstatic.net/Sites/stackoverflow/Img/favicon.ico"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- Axios CDN -->
-  </head>
-  <body>
-    <form>
-      <select
-        aria-label="Select Course"
-        id="course"
-        name="course"
-        data-cy="course_select"
-      >
-        <option selected value="">Choose Course</option>
-        <!-- These options will be replaced dynamically via AJAX -->
-      </select>
-      <br />
+<head>
+  <title>Student Logs</title>
+  <meta charset="UTF-8">
+  
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <script>
+    if (!window.bootstrap) {
+      document.write('<link rel="stylesheet" href="bootstrap.min.css">'); // Local fallback
+    }
+  </script>
 
-      <label for="uvuId">UVU ID</label><br />
-      <input
-        type="text"
-        id="uvuId"
-        name="uvuId"
-        data-cy="uvuId_input"
-        maxlength="8"
-        pattern="\d{8}"
-        placeholder="10234567"
-        disabled
-      />
-      <h3 id="uvuIdDisplay" data-cy="uvuIdDisplay">
-        Studnet Logs for 10234567
-      </h3>
-      <ul data-cy="logs">
-        <!-- dynamically loaded via AJAX -->
-      </ul>
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script>
+    if (!window.jQuery) {
+      document.write('<script src="jquery.min.js"><\/script>'); // Local fallback
+    }
+  </script>
 
-      <label>New Log</label><br />
-      <textarea
-        style="height: 75px"
-        aria-label="add log textarea"
-        data-cy="log_textarea"
-        disabled
-      ></textarea>
-      <br />
-      <button type="submit" data-cy="add_log_btn" disabled>Add Log</button>
-    </form>
-    <label class="theme-toggle">
-      <input type="checkbox" id="themeSwitch" />
-      Dark Mode
-    </label>
-
-    <script src="script.js"></script>
-  </body>
-</html>
+  <!-- Bootstrap JavaScript (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    if (!window.bootstrap) {
+      document.write('<script src="bootstrap.bundle.min.js"><\/script>'); // Local fallback
+    }
+  </script>
+  
+  <script src="script.js"></script> <!-- Our jQuery-based script -->
+</head>
 
 <!-- DONE: 
   - Set lang attribute to American English ("en").

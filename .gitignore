@@ -1,1 +1,4 @@
 node_modules
+/public/bootstrap.min.css
+/public/bootstrap.bundle.min.js
+/public/jquery.min.js
